@@ -27,41 +27,45 @@ var allIncludedCharacters = [];
 function getCharacters (){
 
 
-  numberOfCharacters = prompt ("How Many Characters?");
-    // if? 
+  numberOfCharacters = prompt ("How Many Characters? (Between 8 and 120)");
+    // if? numofchar less that 8 error
+    // else if numb of character greater than 120 error
+    // updates number of characters to answer
+
+
+    // checks for null
+    // if (numOfChars == '0' || numOfChars === '') error (alert)
 
   includeNumbers = confirm ("Do you want numbers?");
     if (includeNumbers === true){
       allIncludedCharacters = [...allIncludedCharacters,...numbers ];
     }
   
-
   includeSpecialCharcters = confirm ("Do you want special characters?");
     if (includeSpecialCharcters === true){
       allIncludedCharacters = [...allIncludedCharacters,...specialChar ];
     }
   
-
   includeUpperCaseLetters = confirm ("Do you want upper case letters?");
     if (includeUpperCaseLetters === true){
       allIncludedCharacters = [...allIncludedCharacters,...upperCase ];
     }
   
-
   includeLowerCaseLetters = confirm ("Do you want lower case letters?");
     if (includeLowerCaseLetters === true){
       allIncludedCharacters = [...allIncludedCharacters,...lowerCase ];
     }
   
-console.log (allIncludedCharacters)
+  console.log (allIncludedCharacters)
 
-//  if (array.length === 0) return 
+  // if (array.length === 0) return 
   
 }
 
 
 
 function getARandomNumber(){
+  // for loop
   return
 }
 
