@@ -29,12 +29,18 @@ function getCharacters (){
 
   numberOfCharacters = prompt ("How Many Characters? (Between 8 and 120)");
     // if? numofchar less that 8 error
+    if (numberOfCharacters < 8){
+      alert ("number of characters must be between 8 and 120")
+    }
     // else if numb of character greater than 120 error
+    else if (numberOfCharacters > 120){
+      alert ("number of characters must be between 8 and 120")
+    }
     // updates number of characters to answer
 
 
     // checks for null
-    // if (numOfChars == '0' || numOfChars === '') error (alert)
+    if (numberOfCharacters == '0' || numberOfCharacters === '') error (alert)
 
   includeNumbers = confirm ("Do you want numbers?");
     if (includeNumbers === true){
@@ -58,26 +64,27 @@ function getCharacters (){
   
   console.log (allIncludedCharacters)
 
-  // if (array.length === 0) return 
-  
+  if (allIncludedCharacters.length === 0){
+    alert ("Pick something idiot")
+    return 
+  }
 }
 
-
-
 function getARandomNumber(){
-  // for loop
+  for (i=0;i<numberOfCharacters;i++){
+    var index = Math.floor(Math.random() * allIncludedCharacters.length)
+    finalPassword += allIncludedCharacters[index];
+    console.log(finalPassword)
+  }
+
   return
 }
 
 
 function generatePassword(){
   getCharacters();
-  
-
-
-  var randoNumber = getARandomNumber()
-  finalPassword = finalPassword + randoNumber;
-  // return finalPassword
+  getARandomNumber();
+  return finalPassword
 } 
 
 // Write password to the #password input (spits it out for me?)
