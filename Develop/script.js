@@ -19,12 +19,10 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var allIncludedCharacters = [];
 
 
-
-//  allIncludedCharacters = [...allIncludedCharacters,...x ];
-
-
-
+// collects the user choices for number of Characters, and if numbers, special characters, caps, or lower case letters are included
 function getCharacters() {
+
+  // the while loop brings the user back to the number of character prompt if they enter something that isnt a number between 8 and 120, otherwise inputInvalid is set to false and the loop ends.
 
   var inputInvalid = true;
 
@@ -37,17 +35,11 @@ function getCharacters() {
     }
     //
     else {
-      alert("invalid input, please enter a number between 8 and 120. No letters or special characte")
+      alert("invalid input, please enter a number between 8 and 120. No letters or special characters, thank you!")
     }
   }
 
-
-
-
-  // updates number of characters to answer
-
-
-
+  // as these selections are made their corresponding arrays are merged into the allIncludedCharacters array
 
   includeNumbers = confirm("Do you want numbers?");
   if (includeNumbers === true) {
@@ -70,10 +62,11 @@ function getCharacters() {
   }
 
   console.log(allIncludedCharacters)
-
+  // if no characters are selected, the password cant be generated.
   if (allIncludedCharacters.length === 0) {
     alert("Pick something idiot")
     return
+    // and we head back to generatePassword for the next step
   }
 }
 
@@ -97,11 +90,13 @@ function generatePassword() {
 // Write password to the #password input (spits it out for me?)
 function writePassword() {
   var passwordText = document.querySelector("#password");
-  passwordText.value ="";
+
+  // error error error please empty my poor full box
+  // passwordText.value ="";
   var password = generatePassword();
   passwordText.value = password;
 
 }
 
-// Add event listener to generate button
+// Add event listener to generate button. starts us off with 
 generateBtn.addEventListener("click", writePassword);
