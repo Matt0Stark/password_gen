@@ -82,6 +82,7 @@ function getARandomNumber() {
 
 
 function generatePassword() {
+  finalPassword = "";
   getCharacters();
   getARandomNumber();
   return finalPassword
@@ -90,8 +91,8 @@ function generatePassword() {
 // Write password to the #password input (spits it out for me?)
 function writePassword() {
   var passwordText = document.querySelector("#password");
-
-  // error error error please empty my poor full box
+  // finalPassword = "";
+  
   // passwordText.value ="";
   var password = generatePassword();
   passwordText.value = password;
