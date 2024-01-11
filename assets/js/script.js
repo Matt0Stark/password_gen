@@ -27,9 +27,7 @@ function getCharacters() {
   var inputInvalid = true;
 
   while (inputInvalid) {
-
     numberOfCharacters = prompt("How Many Characters? (Between 8 and 120)");
-  //
     if (numberOfCharacters >= 8 && numberOfCharacters <=120) {
       inputInvalid = false;
     }
